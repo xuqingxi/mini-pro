@@ -1,0 +1,42 @@
+<!--pages/library/library.wxml-->
+<view>
+  <view class='img-wrap'>
+    <view wx:for='{{icons}}' class='iconlist' wx:key='{{index}}'>
+      <image 
+      src="{{item.icon}}" 
+      bindtap='change' 
+      bindtouchend='again' 
+      class='{{_num==index?"animating":""}}' 
+      data-num='{{index}}'>
+      </image>
+    </view>
+  </view>
+  <view wx:if="{{show}}">
+    <view wx:if="{{_num == 0}}" class='item-wrap'>
+    <navigator url="../detail/detail?bookId={{html[index]._id}}" wx:for="{{html}}" wx:key="{{index}}" class='itemBook'>
+      <image src="{{item.img}}"></image>
+      <view>{{item.author}}</view>
+      <view>{{item.title}}</view>
+    </navigator>
+  </view>
+  <view wx:elif="{{_num == 1}}" class='item-wrap'>
+    <navigator url="../detail/detail?bookId={{web[index]._id}}" wx:for="{{web}}" wx:key="{{index}}" class='itemBook'>
+      <image src="{{item.img}}"></image>
+      <view >{{item.author}}</view>
+      <view >{{item.title}}</view>
+    </navigator>
+  </view>
+  <view wx:elif="{{_num ==2}}" class='item-wrap'>
+    <navigator url="../detail/detail?bookId={{mobile[index]._id}}" wx:for="{{mobile}}" wx:key="{{index}}" class='itemBook'>
+      <image src="{{item.img}}"></image>
+      <view >{{item.author}}</view>
+      <view>{{item.title}}</view>
+    </navigator>
+  </view>
+  
+  
+  </view>
+  <view wx:else class='loading-icon'>
+    <image src='/assets/loading.svg'></image>
+  </view>
+</view>

@@ -1,0 +1,18 @@
+<!--pages/readed/readed.wxml-->
+<view class='root'>
+  <view wx:if='{{show}}' class='read-book'>
+    <view wx:for="{{readList}}" wx:key="{{index}}" class='books'>
+      <image src='{{item.book.img}}'></image>
+      <view class='bookdesc'>
+        <view class='booktitle'>{{item.book.title}}</view>
+        <view>书籍{{item.title.index+1}}/{{item.title.total}}章节</view>
+        <view class='progress'><progress stroke-width='4' percent='{{percent[index]}}' active='true'><view class='hasseen'>已看{{percent[index]}}%</view></progress></view>
+        <view class='lastread'><view>上次查看:{{item.title.title}}</view><view>两天前</view></view>
+        <view class='btn'><button bindtap='goon' data-index='{{index}}'>继续阅读</button><button class='btn' bindtap='getwholebook'>查看文档</button></view>
+      </view>
+    </view>
+  </view>
+  <view wx:else class='loading-icon'>
+    <image src='/assets/loading.svg'></image>
+  </view>
+</view>

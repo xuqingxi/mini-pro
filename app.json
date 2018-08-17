@@ -1,0 +1,45 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/detail/detail",
+    "pages/title/title",
+    "pages/article/article",
+    "pages/mine/mine",
+    "pages/readed/readed",
+    "pages/library/library"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "云书",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "/assets/index.png",
+        "selectedIconPath": "/assets/index-selected.png"
+      },
+      {
+        "pagePath": "pages/readed/readed",
+        "text": "阅读历史",
+        "iconPath": "/assets/readed.png",
+        "selectedIconPath": "/assets/readed-selected.png"
+      },
+      {
+        "pagePath": "pages/library/library",
+        "text": "图书大厅",
+        "iconPath": "/assets/library.png",
+        "selectedIconPath": "/assets/library-selected.png"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "text": "我的收藏",
+        "iconPath": "/assets/mine.png",
+        "selectedIconPath": "/assets/mine-selected.png"
+      }
+    ]
+  }
+}

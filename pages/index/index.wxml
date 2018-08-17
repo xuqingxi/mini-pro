@@ -1,0 +1,53 @@
+<view class='root'>
+  <view wx:if='{{imgUrls[0]&&fontEnd[0]&&backEnd[0]}}'>
+    <swiper
+      autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" class='swiper-section' indicator-dots indicator-active-color='#fff' circular='{{true}}'>
+      <block wx:for="{{imgUrls}}" wx:key="index">
+        <navigator url="../detail/detail?swiperId={{item._id}}">
+          <swiper-item>
+            <image src="{{item.img}}" />
+          </swiper-item>
+        </navigator>
+      </block>
+    </swiper>
+    <view>
+      <view class="content">前端开发</view>
+      <navigator url="../detail/detail?bookId={{item._id}}" wx:for="{{fontEnd}}" class='book-wrap' wx:key="index">
+        <image src="{{item.img}}" class='book'/>
+        <view class="txt">
+          <view class='book-title'>{{item.title}}</view>
+          <view class='book-desc'>{{item.desc}}</view>
+          <view class='book-bot'>
+            <text class='author'>{{item.author}}</text>
+            <view>
+              <text>{{item.startsnums}}天前</text>
+              <!-- <text>{{item.type.title}}</text> -->
+              <text>{{item.looknums}}人在看</text>
+            </view>
+          </view>
+        </view>
+      </navigator>
+    </view>
+    <view>
+      <view class="content">后端开发</view>
+      <navigator url="../detail/detail?bookId={{item._id}}" wx:for="{{backEnd}}" class='book-wrap' wx:key="index">
+        <image src="{{item.img}}" class='book'/>
+        <view class="txt">
+          <view class='book-title'>{{item.title}}</view>
+          <view class='book-desc'>{{item.desc}}</view>
+          <view class='book-bot'>
+            <text>{{item.author}}</text>
+            <view>
+              <text>{{item.startsnums}}天前</text>
+              <!-- <text>{{item.type.title}}</text> -->
+              <text>{{item.looknums}}人在看</text>
+            </view>
+          </view>
+        </view>
+      </navigator>
+    </view>
+  </view>
+  <view wx:else class='loading-icon'>
+    <image src='/assets/loading.svg'></image>
+  </view>
+</view>

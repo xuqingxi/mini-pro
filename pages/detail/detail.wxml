@@ -1,0 +1,31 @@
+<view class='root'>
+  <view class='wrap' wx:if="{{bookInfo.data}}">
+    <view class='top'>
+      <image src="{{bookInfo.data.img}}"/>
+      <view class='message'>
+        <view class='book-detail'>
+          <view class='book-title'>{{bookInfo.data.title}}</view>
+          <view>作者:{{bookInfo.data.author}}</view>
+          <view>{{bookInfo.data.looknums}}在看</view>
+          <view>{{bookInfo.data.like_this_users.length}}人喜欢</view></view>
+      </view>
+    </view>
+    <view class='operate'>
+        <button bindtap='addcollection'>加入收藏</button>
+        <button open-type='share'>分享好友</button>
+    </view>
+    <view class='desc'>
+    <view class='shortdesc'>简介</view>
+      <view class='maindesc'>{{bookInfo.data.desc}}</view>
+    </view>
+    <view class='update'>
+      <text class='index'>查看目录</text>
+      <text>共{{bookInfo.length}}章</text>
+      <text>更新于两天前</text>
+    </view>
+    <button type="primary" bindtap='getIndex' class='readbook'> 现在阅读 </button>
+  </view>
+  <view wx:else class='loading-icon'>
+    <image src='/assets/loading.svg'></image>
+  </view>
+</view>

@@ -1,0 +1,12 @@
+<view class='root'>
+<view wx:if="{{indexList[0]}}">
+  <view wx:for="{{indexList}}" wx:key="{{index}}" >
+    <navigator url="../article/article?articleId={{item._id}}&&articleIndex={{item.index}}&&bookId={{item.bookId}}" class='title-one'>
+      <text class="textOne">{{item.title}}</text>
+    </navigator>
+  </view>
+</view>
+  <view wx:else class='loading-icon'>
+    <image src='/assets/loading.svg'></image>
+  </view>
+</view>

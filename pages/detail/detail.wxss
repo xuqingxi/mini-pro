@@ -1,0 +1,84 @@
+.wrap{
+ height: 100%;
+ padding: 0 20px;
+}
+.top{
+  display: flex;
+  margin-bottom: 20px;
+}
+.top image{
+  margin-right: 20px;
+  width: 100px;
+  height: 120px; 
+  box-shadow: 1px 1px 1px #252525
+}
+.message{
+  width: 70%;
+  height: 120px; 
+}
+.top .message .book-detail{
+  line-height: 20px;
+  font-size: 12px
+}
+.top .message .book-detail .book-title{
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 20px
+}
+.operate{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.operate button{
+  font-size: 10px;
+  height: 20px;
+  line-height: 20px;
+  width: 120px;
+  background-color: #f1f1f1;
+  margin: 0
+}
+.desc .maindesc{
+  font-size: 10px;
+  padding-bottom: 10px;
+  letter-spacing: 1px;
+  text-align: justify;
+  text-align-last: left
+}
+.desc::after{
+  content: '';
+  display: inline-block;
+  width: 100%
+}
+.desc{
+  border-bottom: 1px solid #f1f1f1
+}
+.desc .shortdesc{
+  font-size: 28rpx;
+  font-weight: bold;
+  margin:10px 0 20px
+}
+.readbook{
+  position: fixed;
+  height: 30px;
+  width: 88%;
+  line-height: 30px;
+  bottom: 40rpx;
+  
+}
+.update{
+  display: flex;
+  justify-content: space-between;
+  font-size: 22rpx;
+  color: #252525;
+  margin-top: 20px;
+  border-bottom: 4px solid #f1f1f1;
+  padding-bottom: 20px
+}
+.update text{
+  text-align: center
+}
+.update .index{
+  font-size: 24rpx;
+  font-weight: bold
+}

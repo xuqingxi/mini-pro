@@ -1,0 +1,43 @@
+/* pages/library/library.wxss */
+.iconlist image{
+  width: 50px;
+  height: 50px;
+  border: 1px solid silver;
+  border-radius: 50%;
+  box-sizing: border-box;
+}
+.item-wrap{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 20px
+}
+.animating{
+  animation: ani .5s ease
+}
+.iconlist{
+  display: inline-block;
+  margin-right: 10px
+}
+.img-wrap{
+  border-bottom:1px solid #f1f1f1;
+  padding-bottom: 5px;
+  margin: 20px
+}
+@keyframes ani{
+  0%   {transform: scale(1)}
+50%  {transform: scale(1.5)}
+100% {transform: scale(1)}
+}
+.itemBook{
+  width: 100px;
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 10px
+}
+.itemBook image{
+  width: 80px;
+  height: 80px
+}
+
+

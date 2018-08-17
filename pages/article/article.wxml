@@ -1,0 +1,26 @@
+<import src="/towxml/entry.wxml"/>
+<view class="root">
+<view class='content-warp' wx:if="{{article.theme}}">
+  <scroll-view style='font-size:{{fontsize}}rpx' class='template'>
+    <template is="entry" data="{{...article}}"/>
+  </scroll-view>
+  <view class='options' >
+    <i class="iconfont icon-qianjin" style="fontsize:20rpx;" bindtap="goback"></i>
+    <i class="iconfont icon-liebiao8" style="fontsize:20rpx;"bindtap="showlist"></i>
+    <i class="iconfont icon-zitijian" style="fontsize:20rpx;" bindtap="sizeDown"></i>
+    <i class="iconfont icon-zitijia" style="fontsize:20rpx;" bindtap="sizeUp"></i>
+    <i class="iconfont icon-deng" style="fontsize:20rpx;" bindtap="modeChange"></i>
+    <i class="iconfont icon-right" style="fontsize:20rpx;" bindtap="goforward"></i>
+  </view>
+</view>
+<view wx:else class='loading-icon'>
+  <image src='/assets/loading.svg'></image>
+</view>
+<view class='listcontent' animation="{{animationData}}">
+  <view wx:for="{{indexlist}}" wx:key="{{index}}" >
+    <navigator url="../article/article?articleId={{item._id}}&&articleIndex={{item.index}}&&bookId={{item.bookId}}" class='title-one'>
+      <text class="textOne">{{item.title}}</text>
+    </navigator>
+  </view>
+</view>
+</view>

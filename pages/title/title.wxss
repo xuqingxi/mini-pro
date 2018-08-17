@@ -1,0 +1,14 @@
+.title-one{
+  line-height: 40rpx;
+  color:#252525;
+  
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.title-one text{
+  line-height: 40rpx;
+  height: 40rpx;
+  font-size: 28rpx;
+  margin: 0 20px;
+  display: block;
+  border-bottom: 2rpx solid #f1f1f1;
+}
