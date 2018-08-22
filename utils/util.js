@@ -90,6 +90,29 @@ export const axios ={
         }
       })
     })
+  },
+  delete(url, data) {
+    return new Promise((resolve, reject) => {
+      let token = wx.getStorageSync('token');
+      let header = {
+        'content-type': 'application/json'
+      }
+      if (token) {
+        header.token = token
+      }
+      wx.request({
+        url: baseUrl + url,
+        data: data,
+        header,
+        method: 'DELETE',
+        success: function (e) {
+          if (e.header.Token) {
+            wx.setStorageSync('token', e.header.Token)
+          }
+          resolve(e.data)
+        }
+      })
+    })
   }
 }
 // module.exports = {

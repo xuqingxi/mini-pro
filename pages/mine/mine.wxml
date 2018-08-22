@@ -1,11 +1,14 @@
 <!--pages/mine/mine.wxml-->
 <view class='root wrap'>
   <view wx:if="{{show}}" >
-     <navigator url="../detail/detail?bookId={{collectionlist[index]._id}}" wx:for="{{collectionlist}}" class='itemBook' wx:key="{{index}}">
-        <image src="{{item.img}}"></image>
-        <view>{{item.author}}</view>
-        <view>{{item.title}}</view>
-     </navigator>
+    <view catchlongpress='delete'>
+      <navigator url="../detail/detail?bookId={{collectionlist[index]._id}}" wx:for="{{collectionlist}}" class='itemBook' wx:key="{{index}}">
+          <image src="{{item.img}}"></image>
+          <view>{{item.author}}</view>
+          <view>{{item.title}}</view>
+          <view wx:if="{{showdelete}}" class='drop' catchtap='deleteCollection' data-delnum='{{item._id}}' data-delindex="{{index}}">x</view>
+      </navigator>
+    </view>
   </view>
   <view wx:else class='loading-icon'>
     <image src='/assets/loading.svg'></image>

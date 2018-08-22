@@ -7,9 +7,27 @@ Page({
    */
   data: {
     collectionlist:[],
-    show:false
+    show:false,
+    showdelete:false
   },
-
+  delete(e){
+    console.log(e)
+    this.setData({
+      showdelete:true
+    })
+  },
+  deleteCollection(options){
+    axios.delete(`/collection/${options.target.dataset.delnum}`).then(res=>{
+      let newArr =this.data.collectionlist.filter(item=>{
+        item._id != options.target.dataset.delnum
+      })
+      if(res.code ==200){
+        this.setData({
+          collectionlist:newArr
+        })
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */

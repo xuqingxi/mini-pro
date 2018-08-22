@@ -10,6 +10,7 @@ Page({
     _num:0,
     html:[],
     web:[],
+    os:[],
     mobile:[],
     show:false
   },
@@ -53,13 +54,17 @@ Page({
         axios.fetch(`/category/${item._id}/books`,{size:999}).then(res=>{
           if(index==0){
             this.setData({
-              mobile:res.data.books
+              html:res.data.books
             })
           }else if(index ==1){
             this.setData({
-              html: res.data.books
+              os: res.data.books
             })
-          }else{
+          } else if (index == 2){
+            this.setData({
+              mobile: res.data.books
+            })
+          } else if(index == 3){
             this.setData({
               web: res.data.books
             })

@@ -1,0 +1,24 @@
+/* pages/login/login.wxss */
+.avatar{
+  display: inline-block;
+  margin: 100px auto 0;
+  border:1px solid transparent;
+overflow:hidden;
+border-radius:50%;
+width:160rpx;
+
+}
+.name{
+  text-align: center
+}
+button{
+  width:70%;
+  position:fixed;
+  bottom:100px;
+  left:50%;
+  transform:translate(-50%);
+}
+.info{
+  flex-direction:column;
+display: flex
+}

@@ -20,20 +20,26 @@
     </navigator>
   </view>
   <view wx:elif="{{_num == 1}}" class='item-wrap'>
-    <navigator url="../detail/detail?bookId={{web[index]._id}}" wx:for="{{web}}" wx:key="{{index}}" class='itemBook'>
+    <navigator url="../detail/detail?bookId={{web[index]._id}}" wx:for="{{os}}" wx:key="{{index}}" class='itemBook'>
       <image src="{{item.img}}"></image>
       <view >{{item.author}}</view>
       <view >{{item.title}}</view>
     </navigator>
   </view>
-  <view wx:elif="{{_num ==2}}" class='item-wrap'>
+  <view wx:elif="{{_num == 2}}" class='item-wrap'>
     <navigator url="../detail/detail?bookId={{mobile[index]._id}}" wx:for="{{mobile}}" wx:key="{{index}}" class='itemBook'>
       <image src="{{item.img}}"></image>
       <view >{{item.author}}</view>
       <view>{{item.title}}</view>
     </navigator>
   </view>
-  
+  <view wx:elif="{{_num == 3}}" class='item-wrap'>
+    <navigator url="../detail/detail?bookId={{mobile[index]._id}}" wx:for="{{web}}" wx:key="{{index}}" class='itemBook'>
+      <image src="{{item.img}}"></image>
+      <view >{{item.author}}</view>
+      <view>{{item.title}}</view>
+    </navigator>
+  </view>
   
   </view>
   <view wx:else class='loading-icon'>
