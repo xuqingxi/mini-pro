@@ -28,8 +28,11 @@
         </view>
       </navigator>
     </view>
-    
+    <view hidden='{{showLast}}' class='last'>
+    已经到底了
+    </view>
   </view>
+  
   <view wx:else class='loading-icon'>
     <image src='/assets/loading.svg'></image>
   </view>

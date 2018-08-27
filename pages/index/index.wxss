@@ -53,3 +53,8 @@
 .book-bot text{
   margin-right: 5px
 }
+.last{
+  text-align: center;
+  background: #f1f1f1;
+  color: #252525
+}
