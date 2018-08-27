@@ -1,7 +1,7 @@
 <!--pages/mine/mine.wxml-->
-<view class='root wrap'>
+<view class='root'>
   <view wx:if="{{show}}" >
-    <view catchlongpress='delete'>
+    <view catchlongpress='delete' class='img-wrap'>
       <navigator url="../detail/detail?bookId={{collectionlist[index]._id}}" wx:for="{{collectionlist}}" class='itemBook' wx:key="{{index}}">
           <image src="{{item.img}}"></image>
           <view>{{item.author}}</view>

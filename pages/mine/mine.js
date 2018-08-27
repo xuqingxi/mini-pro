@@ -18,12 +18,14 @@ Page({
   },
   deleteCollection(options){
     axios.delete(`/collection/${options.target.dataset.delnum}`).then(res=>{
+      console.log('删除')
       let newArr =this.data.collectionlist.filter(item=>{
-        item._id != options.target.dataset.delnum
+        return item._id != options.target.dataset.delnum
       })
       if(res.code ==200){
         this.setData({
-          collectionlist:newArr
+          collectionlist:newArr,
+          showdelete:false
         })
       }
     })
@@ -32,7 +34,6 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    let token =wx.getStorageSync('token');
   
   },
 
@@ -53,7 +54,6 @@ Page({
         if(item.book != null){
           axios.fetch(`/book/${item.book._id}`).then(res => {
             collection.push(res.data);
-            console.log(collection)
             this.setData({
               collectionlist: collection
             })

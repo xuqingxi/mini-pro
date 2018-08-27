@@ -1,32 +1,41 @@
 /* pages/mine/mine.wxss */
-.wrap{
-  background: #f1f1f1
-}
 .itemBook image{
   width: 80px;
   height: 80px
 }
 .itemBook{
   position: relative;
-  margin: 20px;
   width: 100px;
   text-align: center;
   margin-bottom: 20px;
   font-size: 10px
 }
+.img-wrap{
+  border-bottom:1px solid #f1f1f1;
+padding-bottom:5px;
+margin:20px;
+display:flex;
+flex-wrap:wrap;
+justify-content:space-between;
+
+}
 .drop{
   position:absolute;
-right:0;
-top:0;
+right:4px;
+top:-5px;
 font-size:14px;
 font-weight:bold;
-border:1px solid red;
 border-radius:50%;
 display:inline-block;
-width:11px;
-height:12px;
+width:15px;
+height:16px;
 text-align:center;
-line-height:10px;
-background:#fff;
-
+line-height:13px;
+background:rgb(67, 154, 224);
+color: white
+}
+.img-wrap::after{
+  content: '';
+  width: 100px;
+  display: inline-block
 }
